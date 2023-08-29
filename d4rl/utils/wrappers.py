@@ -165,7 +165,7 @@ class NormalizedBoxEnv(ProxyEnv):
         next_obs, reward, done, truncated, info = wrapped_step
         if self._should_normalize:
             next_obs = self._apply_normalize_obs(next_obs)
-        return next_obs, reward * self._reward_scale, done, truncated info
+        return next_obs, reward * self._reward_scale, done, truncated, info
 
     def __str__(self):
         return "Normalized: %s" % self._wrapped_env
